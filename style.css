@@ -46,20 +46,6 @@ h1 {
     }
 }
 
-.move-left {
-    animation-name: move-left;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-duration: 1000ms;
-    animation-fill-mode: forwards;
-}
-
-@keyframes move-left {
-    100% {
-        transform: translate(-100%);
-    }
-}
-
 .tooltip {
     display: none;
     position: absolute;

@@ -23,8 +23,10 @@ function insertGridHTML() {
             </div>
         `
         grid.insertAdjacentHTML("afterbegin", myHTML);
-        document.querySelector("#bar" + i).addEventListener("mouseover", showTooltip);
-        document.querySelector("#bar" + i).addEventListener("mouseleave", hideTooltip);
+        const bar = document.querySelector("#bar" + i);
+        bar.addEventListener("mouseover", showTooltip);
+        bar.addEventListener("mouseleave", hideTooltip);
+        bar.style.filter = `grayscale(${i*0.025})`
     }
 }
 
@@ -45,7 +47,7 @@ function updateQueueArray() {
 
 function setBarHeights() {
     for (let i = 0; i < barsAmount; i++) {
-        const bar = document.querySelector("#bar" + i)
+        const bar = document.querySelector("#bar" + i);
         bar.style.height = queueArray[i] + "vh";
         bar.children[0].innerText = `Mængde i kø: ${queueArray[i]}`
     }
