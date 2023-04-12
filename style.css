@@ -22,7 +22,7 @@ h1 {
     display:grid;
     grid-template-columns: repeat(40, 1fr);
     align-items: last baseline;
-    min-height: 40vh;
+    min-height: 55vh;
 }
 
 .bar {
