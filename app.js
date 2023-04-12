@@ -62,21 +62,7 @@ function handleAnimationEnd() {
     bar.offsetWidth;
 }
 
-// function setAnimations() {
-//     for (let i = 0; i < barsAmount; i++) {
-//         const bar = document.querySelector("#bar" + i);
-//         bar.classList.add("move-left");
-//     }
-// }
 
-// function handleAnimationEnd() {
-//       for (let i = 0; i < barsAmount; i++) {
-//         const bar = document.querySelector("#bar" + i);
-//         bar.classList.remove("move-left");
-//         bar.offsetWidth;
-//     }
-    
-// }
 
 function showTooltip() {
     this.children[0].style.display = "block";
