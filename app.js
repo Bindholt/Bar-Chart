@@ -9,7 +9,7 @@ function init() {
     insertGridHTML();
     declareArray();
     updateHTML();
-    setAnimations();
+    setAnimation();
     setInterval(updateHTML, 1000);
 }
 
@@ -19,7 +19,7 @@ function insertGridHTML() {
     for(let i = 0; i < barsAmount; i++) {
         const myHTML = /*html*/`
             <div id="bar${i}" class="bar">
-                <div class="tooltip">Hello</div>
+                <div class="tooltip"></div>
             </div>
         `
         grid.insertAdjacentHTML("afterbegin", myHTML);
@@ -51,23 +51,32 @@ function setBarHeights() {
     }
 }
 
-function setAnimations() {
-    for (let i = 0; i < barsAmount; i++) {
-        const bar = document.querySelector("#bar" + i)
-        bar.classList.add("move-left");
-        //bar.addEventListener("animationend", handleAnimationEnd);
-    }
+function setAnimation() {
+    const bar = document.querySelector("#grid-container");
+    bar.classList.add("move-left-container");
 }
 
 function handleAnimationEnd() {
-      for (let i = 0; i < barsAmount; i++) {
-        const bar = document.querySelector("#bar" + i)
-        bar.classList.remove("move-left");
-        bar.offsetWidth;
-        //bar.addEventListener("animationend", handleAnimationEnd);
-    }
-    
+    const bar = document.querySelector("#grid-container");
+    bar.classList.remove("move-left-container");
+    bar.offsetWidth;
 }
+
+// function setAnimations() {
+//     for (let i = 0; i < barsAmount; i++) {
+//         const bar = document.querySelector("#bar" + i);
+//         bar.classList.add("move-left");
+//     }
+// }
+
+// function handleAnimationEnd() {
+//       for (let i = 0; i < barsAmount; i++) {
+//         const bar = document.querySelector("#bar" + i);
+//         bar.classList.remove("move-left");
+//         bar.offsetWidth;
+//     }
+    
+// }
 
 function showTooltip() {
     this.children[0].style.display = "block";
@@ -79,7 +88,7 @@ function hideTooltip() {
 
 function updateHTML() {
     handleAnimationEnd();
-    setAnimations();
+    setAnimation();
     updateQueueArray();
     setBarHeights();
 }
